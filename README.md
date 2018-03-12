@@ -5,7 +5,7 @@ This project is based on [ajardin repository](https://github.com/ajardin/docker-
 
 ## Architecture
 * `web`: [PHP 7.2 version](https://github.com/hochgenug/docker-vns/blob/master/web/Dockerfile) with Apache (web server).
-* `mysql`: [mysql:latest](https://hub.docker.com/_/mysql/) image (Magento database).
+* `mysql`: [mysql:latest](https://hub.docker.com/_/mysql/) image (database).
 * `maildev`: [djfarrelly/maildev:latest](https://hub.docker.com/r/djfarrelly/maildev/) image (emails debugging).
 
 ## Additional Features
@@ -50,3 +50,9 @@ vns_maildev_1          bin/maildev --web 80 --smtp 25   Up      25/tcp, 0.0.0.0:
 ```
 Note: You will see something slightly different if you do not clone the repository in a `vns` directory.
 The container prefix depends on your directory name.
+
+ ### Enter in the web container
+ ```bash
+ $ docker exec -it vns_web_1 bash
+ ```
+ (To get the name use the `docker-compose ps` command)
