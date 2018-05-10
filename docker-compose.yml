@@ -11,7 +11,7 @@ services:
     tty: true
 
   mysql:
-    image: mysql:latest
+    image: mysql:5.7.21
     env_file: docker-env
     ports:
       - "3306:3306"
